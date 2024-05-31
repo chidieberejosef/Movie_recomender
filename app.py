@@ -29,7 +29,11 @@ def recommend(movie):
             recommended_movies_name.append(movies.iloc[i[0]].title)
     return recommended_movies_name, recommended_movies_poster
 
-st.header("Movies Recommendation System Using Machine Learning")
+st.header("Movies Recommendation System")
+footer_html = """<div style='text-align: left;'>
+<p>Developed By Chidiebere Paul-Joseph</p>
+</div>"""
+st.markdown(footer_html, unsafe_allow_html=True)
 
 movies = pickle.load(open('artifacts/movie_list.pkl', 'rb'))
 similarity = pickle.load(open('artifacts/similarity.pkl', 'rb'))
